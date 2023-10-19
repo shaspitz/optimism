@@ -258,7 +258,7 @@ func TestLocalDevnet(t *testing.T) {
 	require.Equal(t, devnetPreset.ChainConfig.L1Contracts, conf.Chain.L1Contracts)
 }
 
-func TestThrowsOnUnknownKeys(t *testing.T) {
+func TestErrOnUnknownKeys(t *testing.T) {
 	logger := testlog.Logger(t, log.LvlInfo)
 	tmpfile, err := os.CreateTemp("", "test.toml")
 	require.NoError(t, err)
