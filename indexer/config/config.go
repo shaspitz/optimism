@@ -161,8 +161,7 @@ func LoadConfig(log log.Logger, path string) (Config, error) {
 
 	if len(md.Undecoded()) > 0 {
 		log.Error("unknown fields in config file", "fields", md.Undecoded())
-		err = fmt.Errorf("unknown fields in config file: %v", md.Undecoded())
-		return cfg, err
+		return cfg, fmt.Errorf("unknown fields in config file: %v", md.Undecoded())
 	}
 
 	if cfg.Chain.Preset == DevnetPresetId {
